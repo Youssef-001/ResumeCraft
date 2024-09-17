@@ -3,7 +3,12 @@ import CustomInput from "./CustomInput";
 
 import Info from "./Info";
 
-function DisplayInfo({ page = "two" }) {
+import Experience from "./Experience";
+import RenderExp from "./RenderExp";
+import Projects from "./Projects";
+import RenderProjects from "./RenderProjects";
+
+function DisplayInfo({ page = "four" }) {
   const [name, setName] = useState("joe");
   const [phone, setPhone] = useState("123-456-789");
   const [linkedin, setLinkedin] = useState("linkedin.com/joe");
@@ -13,6 +18,8 @@ function DisplayInfo({ page = "two" }) {
   const [degree, setDegree] = useState("Computer science");
   const [gradYear, setGradYear] = useState("2027");
   const [experience, setExperience] = useState([]);
+
+  const [projects, setProjects] = useState([]);
 
   if (page == "one") {
     return (
@@ -56,6 +63,7 @@ function DisplayInfo({ page = "two" }) {
           github={github}
           email={mail}
         ></Info>
+        <RenderExp experience={experience}></RenderExp>
       </>
     );
   } else if (page == "two")
@@ -92,10 +100,28 @@ function DisplayInfo({ page = "two" }) {
           degree={degree}
           gradYear={gradYear}
         ></Info>
+        <RenderExp experience={experience}></RenderExp>
       </>
     );
-  else if (page == "3") {
-    return <></>;
+  else if (page == "three") {
+    return (
+      <>
+        <Experience
+          experiences={experience}
+          setExperience={setExperience}
+        ></Experience>
+
+        <RenderExp experience={experience}></RenderExp>
+      </>
+    );
+  } else if (page == "four") {
+    return (
+      <>
+        <Projects projects={projects} setProjects={setProjects}></Projects>
+
+        <RenderProjects projects={projects}></RenderProjects>
+      </>
+    );
   }
 }
 
