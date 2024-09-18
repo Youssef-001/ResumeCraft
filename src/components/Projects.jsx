@@ -13,17 +13,17 @@ function Projects({ projects, setProjects }) {
   const handleAddProject = () => {
     let newProject = {
       name: name,
-      details: details,
+      details: detail,
     };
 
     setProjects([...projects, newProject]);
 
     setName("");
-    setDetails([]);
+    setDetails("");
   };
 
   return (
-    <>
+    <div className="projects-div">
       <CustomInput
         id="projectName"
         classname="projectName"
@@ -31,22 +31,32 @@ function Projects({ projects, setProjects }) {
         setName={setName}
       ></CustomInput>
 
-      <label htmlFor="details">Project Details: </label>
+      {/* <label htmlFor="details">Project Details: </label>
       <textarea
         placeholder="details"
         name="details"
         id="details"
         onChange={(e) => setDetail(e.target.value)}
-      ></textarea>
+      ></textarea> */}
 
-      <button type="button" onClick={handleAddDetail}>
-        Add detail
-      </button>
+      <div className="mb-3">
+        <label htmlFor="details" className="form-label">
+          Add project details
+        </label>
+        <textarea
+          placeholder="details"
+          name="details"
+          id="details"
+          onChange={(e) => setDetail(e.target.value)}
+          className="form-control"
+          rows="3"
+        ></textarea>
+      </div>
 
       <button type="button" onClick={handleAddProject}>
         Add Project
       </button>
-    </>
+    </div>
   );
 }
 

@@ -5,12 +5,12 @@ function Experience({ experiences, setExperience }) {
   const [achievement, setAchievement] = useState("");
   const [title, setTitle] = useState("");
   const [company, setCompany] = useState("");
-  const [achievements, setAchievements] = useState([]);
+  const [achievements, setAchievements] = useState("");
   const [startYear, setStartYear] = useState("");
   const [endYear, setEndYear] = useState("");
 
   const handleAddAchievement = () => {
-    setAchievements((prevAchievements) => [...prevAchievements, achievement]);
+    setAchievements(achievements);
 
     // Clear the achievement input field
     setAchievement("");
@@ -20,7 +20,7 @@ function Experience({ experiences, setExperience }) {
     const newExperience = {
       title: title,
       company: company,
-      achievements: achievements,
+      achievements: achievement,
       startYear: startYear,
       endYear: endYear,
     };
@@ -37,7 +37,7 @@ function Experience({ experiences, setExperience }) {
   };
 
   return (
-    <>
+    <div className="exp-div">
       <CustomInput
         id="expTitle"
         classname="expTitle"
@@ -52,13 +52,21 @@ function Experience({ experiences, setExperience }) {
         setName={setCompany}
       />
 
-      <textarea
-        value={achievement}
-        onChange={(e) => setAchievement(e.target.value)}
-        name="achievement"
-        id="achievement"
-        placeholder="Enter an achievement"
-      ></textarea>
+      <div className="mb-3">
+        <label htmlFor="exampleFormControlTextarea1" className="form-label">
+          Achievements
+        </label>
+        <textarea
+          className="form-control"
+          rows="3"
+          aria-describedby="inputGroup-sizing-lg"
+          value={achievement}
+          onChange={(e) => setAchievement(e.target.value)}
+          name="achievement"
+          id="achievement"
+          placeholder="Enter an achievement"
+        ></textarea>
+      </div>
 
       <div>
         <label htmlFor="startYear">Start year</label>
@@ -79,9 +87,9 @@ function Experience({ experiences, setExperience }) {
         />
       </div>
 
-      <button type="button" onClick={handleAddAchievement}>
+      {/* <button type="button" onClick={handleAddAchievement}>
         Add achievement
-      </button>
+      </button> */}
 
       <button type="button" onClick={handleAddExperience}>
         Add experience
@@ -92,7 +100,7 @@ function Experience({ experiences, setExperience }) {
           <li key={index}>{achieve}</li>
         ))}
       </ul> */}
-    </>
+    </div>
   );
 }
 

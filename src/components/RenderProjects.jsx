@@ -1,12 +1,17 @@
 function RenderProjects({ projects }) {
+  let newProjects = projects.map((project) => ({
+    ...project,
+    details: project.details.split("\n"),
+  }));
   return (
     <div>
-      {projects.map((project, index) => (
-        <div key={index}>
+      {newProjects.map((project, index) => (
+        <div className="container" key={index}>
+          <hr></hr>
           <h2>{project.name}</h2>
           <ul>
-            {project.details.map((detail, idx) => (
-              <li key={idx}>{detail}</li>
+            {project.details.map((d) => (
+              <li>{d}</li>
             ))}
           </ul>
         </div>

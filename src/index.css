@@ -1,0 +1,74 @@
+.info-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+}
+
+.cv {
+  background-color: beige;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cv {
+  display: grid;
+
+  grid-column: 2/-1;
+}
+
+.edu {
+}
+
+.exp-div,
+.projects-div,
+.grad-div,
+.info-div {
+  margin: 3rem;
+  padding: 1rem;
+  height: auto;
+}
+
+.info-div div,
+.exp-div div,
+.projects-div div,
+.grad-div div {
+  padding: 4px;
+}
+
+.main-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cv h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: underline;
+  color: black;
+}
+
+.btn {
+  width: 9rem;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  margin-left: 3rem;
+  flex: 0;
+}
+
+.display-6 {
+  font-weight: 500;
+}
+
+.gradYear {
+  float: right;
+}

@@ -8,7 +8,9 @@ import RenderExp from "./RenderExp";
 import Projects from "./Projects";
 import RenderProjects from "./RenderProjects";
 
-function DisplayInfo({ page = "four" }) {
+import RenderCv from "./RenderCV";
+
+function DisplayInfo({ page = 1 }) {
   const [name, setName] = useState("joe");
   const [phone, setPhone] = useState("123-456-789");
   const [linkedin, setLinkedin] = useState("linkedin.com/joe");
@@ -21,10 +23,10 @@ function DisplayInfo({ page = "four" }) {
 
   const [projects, setProjects] = useState([]);
 
-  if (page == "one") {
+  if (page == 1) {
     return (
       <>
-        <div>
+        <div className="info-div">
           <CustomInput
             id="name"
             label="Full name: "
@@ -56,20 +58,25 @@ function DisplayInfo({ page = "four" }) {
             setName={setGithub}
           ></CustomInput>
         </div>
-        <Info
+
+        <RenderCv
           fullName={name}
           phone={phone}
           linkedin={linkedin}
           github={github}
-          email={mail}
-        ></Info>
-        <RenderExp experience={experience}></RenderExp>
+          mail={mail}
+          uni={uni}
+          degree={degree}
+          gradYear={gradYear}
+          projects={projects}
+          experience={experience}
+        ></RenderCv>
       </>
     );
-  } else if (page == "two")
+  } else if (page == 2)
     return (
       <>
-        <div>
+        <div className="grad-div">
           <CustomInput
             id="uni"
             classname="uni"
@@ -90,20 +97,22 @@ function DisplayInfo({ page = "four" }) {
             setName={setGradYear}
           ></CustomInput>
         </div>
-        <Info
+
+        <RenderCv
           fullName={name}
           phone={phone}
           linkedin={linkedin}
           github={github}
-          email={mail}
+          mail={mail}
           uni={uni}
           degree={degree}
           gradYear={gradYear}
-        ></Info>
-        <RenderExp experience={experience}></RenderExp>
+          projects={projects}
+          experience={experience}
+        ></RenderCv>
       </>
     );
-  else if (page == "three") {
+  else if (page == 3) {
     return (
       <>
         <Experience
@@ -111,15 +120,37 @@ function DisplayInfo({ page = "four" }) {
           setExperience={setExperience}
         ></Experience>
 
-        <RenderExp experience={experience}></RenderExp>
+        <RenderCv
+          fullName={name}
+          phone={phone}
+          linkedin={linkedin}
+          github={github}
+          mail={mail}
+          uni={uni}
+          degree={degree}
+          gradYear={gradYear}
+          projects={projects}
+          experience={experience}
+        ></RenderCv>
       </>
     );
-  } else if (page == "four") {
+  } else if (page == 4) {
     return (
       <>
         <Projects projects={projects} setProjects={setProjects}></Projects>
 
-        <RenderProjects projects={projects}></RenderProjects>
+        <RenderCv
+          fullName={name}
+          phone={phone}
+          linkedin={linkedin}
+          github={github}
+          mail={mail}
+          uni={uni}
+          degree={degree}
+          gradYear={gradYear}
+          projects={projects}
+          experience={experience}
+        ></RenderCv>
       </>
     );
   }
