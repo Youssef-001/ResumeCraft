@@ -68,7 +68,7 @@ a {
   margin-left: 3rem;
   grid-row: 2/3;
   position: absolute;
-  top: 70vh;
+  top: 80vh;
 }
 
 .display-6 {
@@ -113,10 +113,19 @@ div {
   .info-div,
   .grad-div,
   .exp-div,
-  .btns {
+  .btns,
+  .skills-div {
     display: none;
   }
   .cv {
     grid-column: 1/-1;
   }
+}
+
+.add-exp {
+  margin-top: 1rem;
+}
+
+input[type="date"] {
+  margin-left: 15px;
 }

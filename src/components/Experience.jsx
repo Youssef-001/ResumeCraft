@@ -87,19 +87,13 @@ function Experience({ experiences, setExperience }) {
         />
       </div>
 
-      {/* <button type="button" onClick={handleAddAchievement}>
-        Add achievement
-      </button> */}
-
-      <button type="button" onClick={handleAddExperience}>
+      <button
+        type="button"
+        className="btn btn-secondary add-exp"
+        onClick={handleAddExperience}
+      >
         Add experience
       </button>
-
-      {/* <ul>
-        {achievements.map((achieve, index) => (
-          <li key={index}>{achieve}</li>
-        ))}
-      </ul> */}
     </div>
   );
 }
