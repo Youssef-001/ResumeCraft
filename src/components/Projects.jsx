@@ -53,7 +53,11 @@ function Projects({ projects, setProjects }) {
         ></textarea>
       </div>
 
-      <button type="button" onClick={handleAddProject}>
+      <button
+        className="btn btn-secondary btn-sm"
+        type="button"
+        onClick={handleAddProject}
+      >
         Add Project
       </button>
     </div>

@@ -5,10 +5,13 @@ function RenderProjects({ projects }) {
   }));
   return (
     <div>
+      {projects.length > 0 ? (
+        <p className="projects container">Projects</p>
+      ) : null}
       {newProjects.map((project, index) => (
         <div className="container" key={index}>
           <hr></hr>
-          <h2>{project.name}</h2>
+          <h3>{project.name}</h3>
           <ul>
             {project.details.map((d) => (
               <li>{d}</li>

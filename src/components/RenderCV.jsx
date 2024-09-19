@@ -1,6 +1,7 @@
 import Info from "./Info";
 import RenderExp from "./RenderExp";
 import RenderProjects from "./RenderProjects";
+import RenderSkills from "./RenderSkills";
 
 function RenderCv({
   projects,
@@ -13,6 +14,7 @@ function RenderCv({
   uni,
   degree,
   gradYear,
+  skills,
 }) {
   return (
     <div className="cv">
@@ -26,10 +28,11 @@ function RenderCv({
         degree={degree}
         gradYear={gradYear}
       ></Info>
-      {experience.length > 0 ? <p className="display-6">Experience</p> : null}
+
       <RenderExp experience={experience}></RenderExp>
-      {projects.length > 0 ? <p className="display-6">Projects</p> : null}
+
       <RenderProjects projects={projects}></RenderProjects>
+      <RenderSkills skills={skills}></RenderSkills>
     </div>
   );
 }

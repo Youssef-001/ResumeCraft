@@ -7,6 +7,7 @@ import Experience from "./Experience";
 import RenderExp from "./RenderExp";
 import Projects from "./Projects";
 import RenderProjects from "./RenderProjects";
+import Skills from "./Skills";
 
 import RenderCv from "./RenderCV";
 
@@ -22,6 +23,7 @@ function DisplayInfo({ page = 1 }) {
   const [experience, setExperience] = useState([]);
 
   const [projects, setProjects] = useState([]);
+  let [skills, setSkills] = useState("");
 
   if (page == 1) {
     return (
@@ -70,6 +72,7 @@ function DisplayInfo({ page = 1 }) {
           gradYear={gradYear}
           projects={projects}
           experience={experience}
+          skills={skills}
         ></RenderCv>
       </>
     );
@@ -109,6 +112,7 @@ function DisplayInfo({ page = 1 }) {
           gradYear={gradYear}
           projects={projects}
           experience={experience}
+          skills={skills}
         ></RenderCv>
       </>
     );
@@ -131,6 +135,7 @@ function DisplayInfo({ page = 1 }) {
           gradYear={gradYear}
           projects={projects}
           experience={experience}
+          skills={skills}
         ></RenderCv>
       </>
     );
@@ -150,6 +155,26 @@ function DisplayInfo({ page = 1 }) {
           gradYear={gradYear}
           projects={projects}
           experience={experience}
+          skills={skills}
+        ></RenderCv>
+      </>
+    );
+  } else if (page == 5) {
+    return (
+      <>
+        <Skills setSkills={setSkills}></Skills>
+        <RenderCv
+          fullName={name}
+          phone={phone}
+          linkedin={linkedin}
+          github={github}
+          mail={mail}
+          uni={uni}
+          degree={degree}
+          gradYear={gradYear}
+          projects={projects}
+          experience={experience}
+          skills={skills}
         ></RenderCv>
       </>
     );

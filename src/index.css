@@ -11,6 +11,8 @@
 #root {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  height: 100vh;
 }
 
 .cv {
@@ -25,10 +27,12 @@
 .exp-div,
 .projects-div,
 .grad-div,
-.info-div {
+.info-div,
+.skills-div {
   margin: 3rem;
   padding: 1rem;
   height: auto;
+  grid-row: 1/2;
 }
 
 .info-div div,
@@ -40,7 +44,7 @@
 
 .main-info {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -62,13 +66,57 @@ a {
   display: flex;
   gap: 1rem;
   margin-left: 3rem;
-  flex: 0;
+  grid-row: 2/3;
+  position: absolute;
+  top: 70vh;
 }
 
 .display-6 {
   font-weight: 500;
 }
 
-.gradYear {
-  float: right;
+.uni {
+  font-weight: 600;
+}
+
+.degree,
+.expYear {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 0;
+}
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.education,
+.exp,
+.projects,
+.skills {
+  font-size: 30px;
+  font-weight: 00;
+}
+
+.title {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@media print {
+  .projects-div,
+  .info-div,
+  .grad-div,
+  .exp-div,
+  .btns {
+    display: none;
+  }
+  .cv {
+    grid-column: 1/-1;
+  }
 }

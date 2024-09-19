@@ -9,7 +9,7 @@ function CV() {
         <button
           className="btn btn-primary"
           onClick={(e) => {
-            current < 4 ? setCurrent(current + 1) : null;
+            current < 5 ? setCurrent(current + 1) : null;
           }}
         >
           Next
@@ -21,6 +21,10 @@ function CV() {
           }}
         >
           Previous
+        </button>
+
+        <button onClick={(e) => window.print()} className="btn btn-success">
+          Print
         </button>
       </div>
     </>
